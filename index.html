@@ -1,10 +1,313 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Banner</title>
+  <meta charset="UTF-8" />
+  <title>Banner regalos Capichef</title>
+  <style>
+    :root {
+      --altura-banner: 110px;
+      --velocidad-scroll: 40s; /* más bajo = más rápido, más alto = más lento */
+      --color-fondo: rgba(0, 0, 0, 0.6); /* cambia a #00ff00 si quieres chroma key */
+      --color-texto: #ffffff;
+      --color-accion: #ff4d85;
+      --borde-radio: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: transparent; /* fondo transparente para usar como overlay */
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--color-texto);
+    }
+
+    .banner-wrapper {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 10px; /* distancia desde el borde superior del live */
+    }
+
+    .banner {
+      position: relative;
+      width: 96vw;
+      max-width: 1200px;
+      height: var(--altura-banner);
+      background: var(--color-fondo);
+      border-radius: var(--borde-radio);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      padding-inline: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .banner-title {
+      position: absolute;
+      left: 24px;
+      top: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.9;
+    }
+
+    .banner-track {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      animation: scroll var(--velocidad-scroll) linear infinite;
+    }
+
+    @keyframes scroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 14px;
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      white-space: nowrap;
+    }
+
+    .item img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .label {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .gift-name {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .gift-action {
+      font-size: 12px;
+      color: var(--color-accion);
+      font-weight: 500;
+    }
+
+    /* versión compacta en móviles */
+    @media (max-width: 768px) {
+      :root {
+        --altura-banner: 96px;
+      }
+
+      .item img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .item {
+        padding: 4px 10px;
+        gap: 8px;
+      }
+
+      .gift-name {
+        font-size: 13px;
+      }
+
+      .gift-action {
+        font-size: 11px;
+      }
+
+      .banner-title {
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Banner funcionando</h1>
+  <div class="banner-wrapper">
+    <div class="banner">
+      <div class="banner-title">Regalos y acciones</div>
+
+      <div class="banner-track">
+        <!-- ====== ITEMS DEL BANNER ======
+             Usa exactamente los mismos nombres de archivo que ves en /icons/
+             Solo cambia los textos de "Activa: ..." a lo que tú quieras.
+        -->
+
+        <div class="item">
+          <img src="icons/01 alas guardianes.webp" alt="Alas guardianes" />
+          <div class="label">
+            <span class="gift-name">Alas guardianes</span>
+            <span class="gift-action">Activa: Combo especial del chef</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="icons/01 cake slice.webp" alt="Cake slice" />
+          <div class="label">
+            <span class="gift-name">Cake Slice</span>
+            <span class="gift-action">Activa: Postre sorpresa</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="icons/01 choclo.webp" alt="Choclo" />
+          <div class="label">
+            <span class="gift-name">Choclo</span>
+            <span class="gift-action">Activa: Anticucho + choclito</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="icons/01 cono de helado.webp" alt="Cono de helado" />
+          <div class="label">
+            <span class="gift-name">Cono de helado</span>
+            <span class="gift-action">Activa: Helado del capichef</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="icons/01 glow stick.webp" alt="Glow stick" />
+          <div class="label">
+            <span class="gift-name">Glow Stick</span>
+            <span class="gift-action">Activa: Modo fiesta en el puesto</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="icons/01 maracas.webp" alt="Maracas" />
+          <div class="label">
+            <span class="gift-name">Maracas</span>
+            <span class="gift-action">Activa: Baile del capichef</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="icons/01 pocion medicinal.webp" alt="Poción medicinal" />
+          <div class="label">
+            <span class="gift-name">Poción medicinal</span>
+            <span class="gift-action">Activa: Curita al corazón del chef</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="icons/05 fuegos artificiales.webp" alt="Fuegos artificiales" />
+          <div class="label">
+            <span class="gift-name">Fuegos artificiales</span>
+            <span class="gift-action">Activa: Explota la cocina (efecto épico)</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="icons/10 corazon.webp" alt="Corazón" />
+          <div class="label">
+            <span class="gift-name">Corazón</span>
+            <span class="gift-action">Activa: Te sirvo gaseosa</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="icons/10 friendship necklace.webp" alt="Friendship necklace" />
+          <div class="label">
+            <span class="gift-name">Friendship Necklace</span>
+            <span class="gift-action">Activa: Foto / saludo especial</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="icons/10 fuego furioso.webp" alt="Fuego furioso" />
+          <div class="label">
+            <span class="gift-name">Fuego furioso</span>
+            <span class="gift-action">Activa: Parrilla al máximo 🔥</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="icons/10 globos.webp" alt="Globos" />
+          <div class="label">
+            <span class="gift-name">Globos</span>
+            <span class="gift-action">Activa: Fiesta en el chat</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="icons/10 pase para el evento.webp" alt="Pase evento" />
+          <div class="label">
+            <span class="gift-name">Pase evento</span>
+            <span class="gift-action">Activa: Invitado VIP del puesto</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="icons/10 tambor bata.webp" alt="Tambor" />
+          <div class="label">
+            <span class="gift-name">Tambor bata</span>
+            <span class="gift-action">Activa: Redoble antes de la orden</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="icons/100 corazon con las manos.webp" alt="Corazón manos" />
+          <div class="label">
+            <span class="gift-name">Corazón con las manos</span>
+            <span class="gift-action">Activa: Gracias mega especial</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="icons/100 gesto de corazon.webp" alt="Gesto de corazón" />
+          <div class="label">
+            <span class="gift-name">Gesto de corazón</span>
+            <span class="gift-action">Activa: Dedicatoria en pantalla</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="icons/100 osito mishka.webp" alt="Osito Mishka" />
+          <div class="label">
+            <span class="gift-name">Osito Mishka</span>
+            <span class="gift-action">Activa: Abrazo del capichef 🐻</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="icons/100 super gg.webp" alt="Super GG" />
+          <div class="label">
+            <span class="gift-name">Super GG</span>
+            <span class="gift-action">Activa: Reconocimiento top del live</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Duplica el contenido para que el scroll sea infinito suave
+    const track = document.querySelector('.banner-track');
+    track.innerHTML += track.innerHTML;
+  </script>
 </body>
 </html>
