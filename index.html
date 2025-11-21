@@ -23,7 +23,7 @@
       margin: 0;
       padding: 0;
       overflow: hidden;
-      background: transparent; /* fondo transparente para usar como overlay */
+      background: transparent; /* fondo transparente para overlay */
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--color-texto);
     }
@@ -68,6 +68,7 @@
       align-items: center;
       gap: 28px;
       animation: scroll var(--velocidad-scroll) linear infinite;
+      padding-left: 160px; /* deja espacio al título fijo */
     }
 
     @keyframes scroll {
@@ -115,7 +116,6 @@
       font-weight: 500;
     }
 
-    /* versión compacta en móviles */
     @media (max-width: 768px) {
       :root {
         --altura-banner: 96px;
@@ -151,152 +151,104 @@
       <div class="banner-title">Regalos y acciones</div>
 
       <div class="banner-track">
-        <!-- ====== ITEMS DEL BANNER ======
-             Usa exactamente los mismos nombres de archivo que ves en /icons/
-             Solo cambia los textos de "Activa: ..." a lo que tú quieras.
-        -->
+        <!-- Asegúrate de que los nombres de archivo coincidan EXACTO con los .webp de /icons/ -->
 
+        <!-- Fantasma chismoso → 01 alas guardianes -->
         <div class="item">
-          <img src="icons/01 alas guardianes.webp" alt="Alas guardianes" />
+          <img src="icons/01 alas guardianes.webp" alt="01 alas guardianes" />
           <div class="label">
-            <span class="gift-name">Alas guardianes</span>
-            <span class="gift-action">Activa: Combo especial del chef</span>
+            <span class="gift-name">01 alas guardianes</span>
+            <span class="gift-action">Activa: Fantasma chismoso</span>
           </div>
         </div>
 
+        <!-- Delivery → 01 cono de helado -->
         <div class="item">
-          <img src="icons/01 cake slice.webp" alt="Cake slice" />
+          <img src="icons/01 cono de helado.webp" alt="01 cono de helado" />
           <div class="label">
-            <span class="gift-name">Cake Slice</span>
-            <span class="gift-action">Activa: Postre sorpresa</span>
+            <span class="gift-name">01 cono de helado</span>
+            <span class="gift-action">Activa: Delivery</span>
           </div>
         </div>
 
+        <!-- Ambulante → 01 choclo -->
         <div class="item">
-          <img src="icons/01 choclo.webp" alt="Choclo" />
+          <img src="icons/01 choclo.webp" alt="01 choclo" />
           <div class="label">
-            <span class="gift-name">Choclo</span>
-            <span class="gift-action">Activa: Anticucho + choclito</span>
+            <span class="gift-name">01 choclo</span>
+            <span class="gift-action">Activa: Ambulante</span>
           </div>
         </div>
 
+        <!-- Tombo yapero → 05 fuegos artificiales -->
         <div class="item">
-          <img src="icons/01 cono de helado.webp" alt="Cono de helado" />
+          <img src="icons/05 fuegos artificiales.webp" alt="05 fuegos artificiales" />
           <div class="label">
-            <span class="gift-name">Cono de helado</span>
-            <span class="gift-action">Activa: Helado del capichef</span>
+            <span class="gift-name">05 fuegos artificiales</span>
+            <span class="gift-action">Activa: Tombo yapero</span>
           </div>
         </div>
 
+        <!-- Duende hot 1 → 10 fuego furioso -->
         <div class="item">
-          <img src="icons/01 glow stick.webp" alt="Glow stick" />
+          <img src="icons/10 fuego furioso.webp" alt="10 fuego furioso" />
           <div class="label">
-            <span class="gift-name">Glow Stick</span>
-            <span class="gift-action">Activa: Modo fiesta en el puesto</span>
+            <span class="gift-name">10 fuego furioso</span>
+            <span class="gift-action">Activa: Duende hot 1</span>
           </div>
         </div>
 
+        <!-- Le cobran cupo → 10 pase para el evento -->
         <div class="item">
-          <img src="icons/01 maracas.webp" alt="Maracas" />
+          <img src="icons/10 pase para el evento.webp" alt="10 pase para el evento" />
           <div class="label">
-            <span class="gift-name">Maracas</span>
-            <span class="gift-action">Activa: Baile del capichef</span>
+            <span class="gift-name">10 pase para el evento</span>
+            <span class="gift-action">Activa: Le cobran cupo</span>
           </div>
         </div>
 
+        <!-- Payaso → 10 globos -->
         <div class="item">
-          <img src="icons/01 pocion medicinal.webp" alt="Poción medicinal" />
+          <img src="icons/10 globos.webp" alt="10 globos" />
           <div class="label">
-            <span class="gift-name">Poción medicinal</span>
-            <span class="gift-action">Activa: Curita al corazón del chef</span>
+            <span class="gift-name">10 globos</span>
+            <span class="gift-action">Activa: Payaso</span>
           </div>
         </div>
 
+        <!-- Duende hot 2 → 20 perfume -->
         <div class="item">
-          <img src="icons/05 fuegos artificiales.webp" alt="Fuegos artificiales" />
+          <img src="icons/20 perfume.webp" alt="20 perfume" />
           <div class="label">
-            <span class="gift-name">Fuegos artificiales</span>
-            <span class="gift-action">Activa: Explota la cocina (efecto épico)</span>
+            <span class="gift-name">20 perfume</span>
+            <span class="gift-action">Activa: Duende hot 2</span>
           </div>
         </div>
 
+        <!-- Sherk → 30 maravilla del bosque -->
         <div class="item">
-          <img src="icons/10 corazon.webp" alt="Corazón" />
+          <img src="icons/30 maravilla del bosque.webp" alt="30 maravilla del bosque" />
           <div class="label">
-            <span class="gift-name">Corazón</span>
-            <span class="gift-action">Activa: Te sirvo gaseosa</span>
+            <span class="gift-name">30 maravilla del bosque</span>
+            <span class="gift-action">Activa: Sherk</span>
           </div>
         </div>
 
+        <!-- Competencia → 30 Trompeta -->
         <div class="item">
-          <img src="icons/10 friendship necklace.webp" alt="Friendship necklace" />
+          <img src="icons/30 Trompeta.webp" alt="30 Trompeta" />
           <div class="label">
-            <span class="gift-name">Friendship Necklace</span>
-            <span class="gift-action">Activa: Foto / saludo especial</span>
+            <span class="gift-name">30 Trompeta</span>
+            <span class="gift-action">Activa: Competencia</span>
           </div>
         </div>
 
+        <!-- Cliente fastidioso → 30 capibara -->
         <div class="item">
-          <img src="icons/10 fuego furioso.webp" alt="Fuego furioso" />
+          <img src="icons/30 capibara.webp" alt="30 capibara" />
           <div class="label">
-            <span class="gift-name">Fuego furioso</span>
-            <span class="gift-action">Activa: Parrilla al máximo 🔥</span>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="icons/10 globos.webp" alt="Globos" />
-          <div class="label">
-            <span class="gift-name">Globos</span>
-            <span class="gift-action">Activa: Fiesta en el chat</span>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="icons/10 pase para el evento.webp" alt="Pase evento" />
-          <div class="label">
-            <span class="gift-name">Pase evento</span>
-            <span class="gift-action">Activa: Invitado VIP del puesto</span>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="icons/10 tambor bata.webp" alt="Tambor" />
-          <div class="label">
-            <span class="gift-name">Tambor bata</span>
-            <span class="gift-action">Activa: Redoble antes de la orden</span>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="icons/100 corazon con las manos.webp" alt="Corazón manos" />
-          <div class="label">
-            <span class="gift-name">Corazón con las manos</span>
-            <span class="gift-action">Activa: Gracias mega especial</span>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="icons/100 gesto de corazon.webp" alt="Gesto de corazón" />
-          <div class="label">
-            <span class="gift-name">Gesto de corazón</span>
-            <span class="gift-action">Activa: Dedicatoria en pantalla</span>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="icons/100 osito mishka.webp" alt="Osito Mishka" />
-          <div class="label">
-            <span class="gift-name">Osito Mishka</span>
-            <span class="gift-action">Activa: Abrazo del capichef 🐻</span>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="icons/100 super gg.webp" alt="Super GG" />
-          <div class="label">
-            <span class="gift-name">Super GG</span>
-            <span class="gift-action">Activa: Reconocimiento top del live</span>
+            <span class="gift-name">30 capibara</span>
+            <span class="gift-action">Activa: Cliente fastidioso</span>
           </div>
         </div>
 
